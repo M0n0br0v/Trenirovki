@@ -27,3 +27,6 @@ venv/
 # Файл для тестирования кода
 test.py
 
+# База данных
+Trenirovki_db
+.DS_Store
