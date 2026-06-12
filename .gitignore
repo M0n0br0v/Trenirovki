@@ -24,9 +24,8 @@ venv/
 *.log
 *.tmp
 
-# Файл для тестирования кода
-test.py
 
-# База данных
-Trenirovki_db
-.DS_Store
+test.py          # Файл для тестирования кода
+Trenirovki_db    # База данных
+.$*              # Бекапы draw.io
+.DS_Store        #Стандартный файл MacOS 
