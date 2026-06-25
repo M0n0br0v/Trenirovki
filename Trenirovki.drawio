@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.5 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.5">
   <diagram name="Страница — 1" id="Kpuwp0D8WjqGyxxN1lrd">
-    <mxGraphModel dx="1876" dy="849" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1594" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -109,7 +109,7 @@
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-71" value="sets" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=top;" parent="NZ6ZDpyBj6s4RTOYCVrW-210" vertex="1">
           <mxGeometry width="210" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-72" value="session_exercise_id" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;" parent="NZ6ZDpyBj6s4RTOYCVrW-210" vertex="1">
+        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-72" value="workout_exercise_id" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;" parent="NZ6ZDpyBj6s4RTOYCVrW-210" vertex="1">
           <mxGeometry x="50" y="50" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-73" value="id" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;" parent="NZ6ZDpyBj6s4RTOYCVrW-210" vertex="1">
@@ -208,10 +208,10 @@
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-211" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="530" y="380" width="210" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-67" value="session_exercises" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=top;" parent="NZ6ZDpyBj6s4RTOYCVrW-211" vertex="1">
+        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-67" value="workout_exercises" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=top;" parent="NZ6ZDpyBj6s4RTOYCVrW-211" vertex="1">
           <mxGeometry width="210" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-68" value="session_id" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;" parent="NZ6ZDpyBj6s4RTOYCVrW-211" vertex="1">
+        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-68" value="workout_id" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;" parent="NZ6ZDpyBj6s4RTOYCVrW-211" vertex="1">
           <mxGeometry x="50" y="50" width="130" height="20" as="geometry" />
         </mxCell>
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-69" value="exercise_id" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;" parent="NZ6ZDpyBj6s4RTOYCVrW-211" vertex="1">
@@ -262,7 +262,7 @@
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-212" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="780" y="300" width="210" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-57" value="sessions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=top;" parent="NZ6ZDpyBj6s4RTOYCVrW-212" vertex="1">
+        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-57" value="workouts" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=top;" parent="NZ6ZDpyBj6s4RTOYCVrW-212" vertex="1">
           <mxGeometry width="210" height="180" as="geometry" />
         </mxCell>
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-58" value="id" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;" parent="NZ6ZDpyBj6s4RTOYCVrW-212" vertex="1">
@@ -753,7 +753,7 @@
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-323" value="Дата" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="-490.5" y="2640" width="50" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-324" value="Вид" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
+        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-324" value="Тип" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="-440.5" y="2640" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-325" value="Зал" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
@@ -936,8 +936,8 @@
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-385" value="Назад" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="-490.5" y="2610" width="70" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-400" value="HISTORY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="-480" y="2560" width="160" height="40" as="geometry" />
+        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-400" value="HISTORY&lt;div&gt;VIEW&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
+          <mxGeometry x="-480" y="2520" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="nQ0QAQUby_pZ3yXj51tU-300" value="Изначально показывает первые X (прикинуть удобное количество) и не отображает кнопку &quot;Назад&quot;. По кнопке &quot;Вперед&quot; показывает следующие несколько и добавляет кнопку &quot;Назад&quot;.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Клик по строке открывает экран ТРЕНИРОВКА для выбранной тренировки.&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="-260" y="2625" width="170" height="150" as="geometry" />
@@ -1359,7 +1359,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="BShIGpPqxZisoaVtvBbg-15" value="sessions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;fontFamily=Comic Sans MS;fontSize=16;labelBackgroundColor=none;verticalAlign=middle;strokeColor=#9673a6;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
+        <mxCell id="BShIGpPqxZisoaVtvBbg-15" value="workouts" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;fontFamily=Comic Sans MS;fontSize=16;labelBackgroundColor=none;verticalAlign=middle;strokeColor=#9673a6;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="110" y="3840" width="70" height="40" as="geometry" />
         </mxCell>
         <mxCell id="BShIGpPqxZisoaVtvBbg-19" value="&lt;font&gt;По умолчанию должно заполняться gym из предыдущей тренировки; можно изменить.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;align=center;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
@@ -1821,8 +1821,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="nQ0QAQUby_pZ3yXj51tU-458" value="session_exercises" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;fontFamily=Comic Sans MS;fontSize=16;labelBackgroundColor=none;verticalAlign=middle;strokeColor=#9673a6;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="1100" y="4710" width="140" height="40" as="geometry" />
+        <mxCell id="nQ0QAQUby_pZ3yXj51tU-458" value="workout_exercises" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;fontFamily=Comic Sans MS;fontSize=16;labelBackgroundColor=none;verticalAlign=middle;strokeColor=#9673a6;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
+          <mxGeometry x="1100" y="4710" width="150" height="40" as="geometry" />
         </mxCell>
         <mxCell id="BShIGpPqxZisoaVtvBbg-250" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;strokeWidth=1;align=center;verticalAlign=middle;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=default;startArrow=none;startFill=0;startSize=4;endArrow=classic;endFill=1;endSize=4;flowAnimation=0;fillColor=#d5e8d4;" parent="1" source="nQ0QAQUby_pZ3yXj51tU-458" target="nQ0QAQUby_pZ3yXj51tU-73" edge="1">
           <mxGeometry relative="1" as="geometry">
