@@ -3,6 +3,7 @@ import flet as ft
 # 1. КЛАССЫ
 # ========================================
 class WorkoutState():
+    """Хранит данные текущей тренировки"""
     def __init__(self):
         self.workout_type = None
         self.gym = None
@@ -11,8 +12,10 @@ class WorkoutState():
         self.exercises = []
 
 class SelectExercisesView():
+    """Формирует экран SelectExercise_View"""   
     def __init__(
-        self, page: ft.Page,
+        self,
+        page: ft.Page,
         state: WorkoutState,
         exercises_data: list,
         on_confirm,
@@ -23,10 +26,10 @@ class SelectExercisesView():
         self.exercises_data = exercises_data                                                       # Данные тренировок из БД
       
         # Колбэки
-        self.on_confrim = on_confirm
+        self.on_confirm = on_confirm
         self.on_cancel = on_cancel
 
-    def toggle_exercise(self, exercise_name: str):
+    def select_exercise(self, exercise_name: str):
         """
         Добавляем или удаляем упражнение в state.exercises
         Args:
@@ -44,11 +47,14 @@ class SelectExercisesView():
             exercise_to_add = None                                                                # Создаем пустую переменную, в которой будем хранить добавляемое упражнение
             for exercise in self.exercises_data:
                 if exercise["name"] == exercise_name:
-                    exercise_to_add = exercise["name"]
+                    exercise_to_add = {
+                        "name": exercise["name"],
+                        "type": exercise["type"] if exercise["type"] else None
+                    }
                     break      
         if exercise_to_add:
             self.state.exercises.append(exercise_to_add)                                           # Если exrcise_to_add заполнено, то добавляем его в список self.state.exercises
-        self._refresh_ui()   
+        self._refresh_ui()
 
     def _get_available_exercises(self):
         """Возвращает список упражнений, которые еще не добавлены в self.state.exercises"""
@@ -57,31 +63,27 @@ class SelectExercisesView():
         }
         return [
             exercise for exercise in self.exercises_data
-            if exercise not in selected_exercises
+            if exercise ["name"] not in selected_exercises
             and exercise["type"] == self.state.workout_type
             or exercise["type"] is None
         ]
 
-    def _build_exercise_item(self, exercise_name: str) -> ft.Row:
-        """
-        Создает строку для одного одного упражнения с кнопками перемещения и добавления/удаления
-        
-        Args:
-            exercise_name (str): название упражнения
-
-        Returns:
-            ft.Row: Колонка с названием упражнения и кнопками
-        """
+    def _build_available_exercise_item(self, exercise_name: str) -> ft.Row:
+        """Создает строку для одного одного упражнения c названием и кнопкой выбора"""
         return ft.Row(
             [
-                ft.Text(exercise_name, expand=True),
+                ft.Container(
+                    ft.Text(exercise_name, expand=True),
+                    width = 180,
+                    alignment=ft.Alignment.CENTER
+                ),
                 ft.IconButton(
                     icon=ft.Icons.ADD,
                     tooltip="Выбрать упражнение",
-                    on_click=lambda _, name=exercise_name: self.toggle_exercise(name)
+                    on_click=lambda _, name=exercise_name: self.select_exercise(name)
                 )
             ],
-            alignment=ft.MainAxisAlignment.SPACE_BETWEEN
+            alignment=ft.MainAxisAlignment.CENTER
         )
 
     def _build_available_section(self) -> ft.Column:
@@ -94,34 +96,114 @@ class SelectExercisesView():
                     size=18,
                     weight=ft.FontWeight.BOLD
                 ),
-                *[self._build_exercise_item(exercise["name"]) for exercise in available_exercises]
-            ]
+                *[self._build_available_exercise_item(exercise["name"]) for exercise in available_exercises]
+            ],
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER
         )
 
-    def _build_selected_exercise_item(self) -> ft.Row:
-        pass
+    def _move_up(self, index: int) -> None:
+        """Увеличиваем порядок упражнения в списке выбранных на 1"""
+        if index > 0: # Нельзя уменьшить индекс первого элемента
+            self.state.exercises[index], self.state.exercises[index - 1] = \
+            self.state.exercises[index - 1], self.state.exercises[index]
+        self._refresh_ui()
+
+    def _move_down(self, index: int):
+        """Уменьшаем порядок упражнения в списке выбранных  на 1"""
+        if index < len(self.state.exercises) - 1:
+            self.state.exercises[index], self.state.exercises[index + 1] = \
+            self.state.exercises[index + 1], self.state.exercises[index]
+        self._refresh_ui()
+
+    def _remove_selected(self, exercise_name: str):
+        self.state.exercises = [
+            exercise for exercise in self.state.exercises if exercise["name"] != exercise_name
+        ]
+        self._refresh_ui()
+
+    def _build_selected_exercise_item(self, exercise_name: str, index: int) -> ft.Row:
+        """Создает строку для одного одного упражнения с кнопками перемещения и добавления/удаления"""
+        return ft.Row(
+            [
+                ft.IconButton(
+                    icon=ft.Icons.KEYBOARD_ARROW_UP,
+                    on_click=lambda _, idx=index: self._move_up(idx)
+                ),
+                ft.IconButton(
+                    icon=ft.Icons.KEYBOARD_ARROW_DOWN,
+                    on_click=lambda _, idx=index: self._move_down(idx)
+                ),
+                ft.Container(
+                    ft.Text(exercise_name, expand=True),
+                    width=180
+                ),    
+                ft.IconButton(
+                    icon=ft.Icons.DELETE,
+                    tooltip="Убрать упражнение из списка",
+                    on_click=lambda _, name=exercise_name: self._remove_selected(name)
+                )
+            ],
+            alignment=ft.MainAxisAlignment.CENTER
+        )
 
     def _build_selected_section (self) -> ft.Column:
-        pass
+        """Строим верхнюю область, в которой перечислены выбранные упражнения в указанной последоватлеьности"""
+        selected_exercises: list = self.state.exercises
+        return ft.Column(
+            [
+                ft.Text(
+                    "Выбранные упражнения:" if selected_exercises else "Нет выбранных упражнений",
+                    size=18,
+                    weight=ft.FontWeight.BOLD
+                ),
+                *[self._build_selected_exercise_item(exercise["name"], index) for index, exercise in enumerate(self.state.exercises)]
+            ],
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER
+        )
 
+    def confirm(self, e) -> None:
+        self.on_confirm(self.state.exercises)
 
+    def cancel(self, e) -> None:
+        self.on_cancel()
 
-    def _refresh_ui(self):                                                                             # Обновляем интерфейс
-        """Обновляет интерфейс экрана"""
-        # TODO запихнуть туда еще что-то после проработки всего класса
-        self.page.update()
-    
-                        
+    def build(self) -> ft.View:
+        content=ft.Column(
+            [
+                self._build_selected_section(),
+                self._build_available_section(),
+                ft.Row(
+                    [
+                        ft.Button(                                                                         # Кнопка "Записать"
+                        content=ft.Text("Записать"),
+                        on_click=self.confirm,
+                        width=250,
+                        height=50
+                    ),
+                        ft.Button(                                                                         # Кнопка "Отмена"
+                            content=ft.Text("Отмена"),
+                            on_click=self.cancel,
+                            width=250,
+                            height=50
+                        )
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER
+                )
+            ],
+            alignment=ft.MainAxisAlignment.CENTER,
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER
+        )
+        return ft.View(
+            route="/select_exercise",
+            controls=[content]
+        )
 
-
-
-
-
-
+    def _refresh_ui(self):                                                                         # Обновляем интерфейс
+        self.page.views[-1] = self.build()                                                         # Берем последний экран (текущий) из page.views и обновляем его
 
 # ========================================
 # 2. ТЕСТОВЫЕ ДАННЫЕ
-# ========================================
+# region ========================================
 exercises_data = [
     {
         "name": "Жим лёжа",
@@ -150,6 +232,33 @@ exercises_data = [
         "sets": [
             {"weight": 60, "reps": 10, "extra": ""},
             {"weight": 60, "reps": 9, "extra": ""},
+        ]
+    },
+    {
+        "name": "Dragon flag",
+        "type": None,
+        "expanded": False,
+        "sets": [
+            {"weight": 0, "reps": 12, "extra": ""},
+            {"weight": 0, "reps": 7, "extra": ""},
+        ]
+    },
+    {
+        "name": "Ягодичный мостик",
+        "type": "Legs",
+        "expanded": False,
+        "sets": [
+            {"weight": 100, "reps": 12, "extra": ""},
+            {"weight": 200, "reps": 7, "extra": ""},
+        ]
+    },
+    {
+        "name": "Leg extension",
+        "type": "Legs",
+        "expanded": False,
+        "sets": [
+            {"weight": 70, "reps": 12, "extra": ""},
+            {"weight": 60, "reps": 7, "extra": ""},
         ]
     },
 ]
@@ -208,7 +317,7 @@ workouts_data = [
         "notes": "Плохо покачался"
     },
 ]
-
+# endregion
 # ========================================
 # 3. ТОЧКА ВХОДА
 # ========================================
@@ -223,10 +332,16 @@ def main (page: ft.Page):
         """Очищает текущую страницу, добавляет на страницу элементы из параметров и обновляет страницу"""
         page.controls.clear()
         page.add(*elements)
-        page.update() 
+        page.update()
+
+    def show_view_for_classes(view) -> None:                                                    # TODO: После перехода на ООП удалить функцию show_view и переименовать текущую в show_view
+        """Отображает экран для объектов ООП, работающих через ft.View, а не через page.add.controls"""
+        page.views.clear()
+        page.views.append(view)
+        page.update()
     # endregion
 
-    current_workout_state = WorkoutState() # Создаем объект класса WorkoutState для хранения состояния текущей тренировки
+    current_workout_state = WorkoutState()                                                         # Создаем объект класса WorkoutState для хранения состояния текущей тренировки
 
     def main_view():
         
@@ -274,7 +389,7 @@ def main (page: ft.Page):
         
         exercises_container = ft.Column(spacing=10)                                                # Создаем пустой контейнер для списка упражнений.
         
-        def toggle_exercise(exercise_index):                                                       # Сворачивает и разворачивает группы строк одного упражнения
+        def select_exercise(exercise_index):                                                       # Сворачивает и разворачивает группы строк одного упражнения
             """
             Функция изменяет значение "expand" для упражнения с соответствующим exercise_index.
             Должна быть привязана к кнопке "Свернуть/Развернуть" (в виде стрелочки) в области с результатами упражнений (смотри макет экрана).
@@ -289,7 +404,7 @@ def main (page: ft.Page):
             )
             expand_btn = ft.Container(                                # Кнопка для сворачивания
                 content=expand_icon,
-                on_click=lambda _, idx=exercise_index: toggle_exercise(idx),
+                on_click=lambda _, idx=exercise_index: select_exercise(idx),
                 padding=5,
             )
             exercise_header = ft.Row(                                 # Заголовок
@@ -368,6 +483,24 @@ def main (page: ft.Page):
                 exercise_card = build_exercises_card(exercise, index) # Формируем карточку упражнения
                 exercises_container.controls.append(exercise_card)    # Добавляем карточку упражнения в контейнер
             page.update()                                                                          # Обновляем страницу
+        def show_select_exercises_view() -> None:
+            """Открывает экран выбора упражнений"""
+            def on_confirm(selected_exercises):
+                current_workout_state.exercises = selected_exercises
+                update_exercises_container()    
+                workout_view()
+            
+            def on_cancel():
+                workout_view()
+
+            select_exercises_view = SelectExercisesView(
+                page = page,
+                state = current_workout_state,
+                exercises_data = exercises_data,
+                on_confirm = on_confirm,
+                on_cancel = on_cancel
+            )
+            show_view_for_classes(select_exercises_view.build())
 
         to_select_gym_view_btn = ft.Button(
             content = ft.Text("Выберите спортзал") if not current_workout_state.gym else ft.Text(current_workout_state.gym),
@@ -394,9 +527,9 @@ def main (page: ft.Page):
             label="{value}",
             value=None
         )
-        select_exerices_btn = ft.IconButton(
+        select_exercise_btn = ft.IconButton(
             icon=ft.Icons.EDIT,
-            # on_click=lambda _:
+            on_click=lambda _: show_select_exercises_view(),
             width=150,
             height=50
         )
@@ -423,7 +556,7 @@ def main (page: ft.Page):
                 to_select_workout_type_view_btn,
                 ft.Text("Комментарий",size=18),
                 to_notes_btn,
-                ft.Text("Длительность тренировки: 00:00",size=18),    # TODO: Добавить автоматический расчет времени тренировки
+                ft.Text("Длительность тренировки: 00:00",size=18),                                 # TODO: Добавить автоматический расчет времени тренировки
                 ft.Row(
                     [
                         ft.Text("Оценка:",size=18),
@@ -438,7 +571,7 @@ def main (page: ft.Page):
                             "Упражнения",
                             size=28,
                             weight=ft.FontWeight.BOLD),
-                        select_exerices_btn
+                        select_exercise_btn
                     ],
                     alignment=ft.MainAxisAlignment.CENTER
                 ),
@@ -449,10 +582,9 @@ def main (page: ft.Page):
             ],
             spacing = 10,
             horizontal_alignment = ft.CrossAxisAlignment.CENTER,
-            scroll = ft.ScrollMode.ADAPTIVE,                          # Добавляем вертикальную прокрутку, если элементов на экране больше, чем помещается на экране.
+            scroll = ft.ScrollMode.ADAPTIVE,                                                       # Добавляем вертикальную прокрутку, если элементов на экране больше, чем помещается на экране.
             expand=True
         )
-        
         update_exercises_container()
         show_view([workout_content])                                                               # Показываем экран WORKOUT в конце функции WORKOUT
     
@@ -464,21 +596,21 @@ def main (page: ft.Page):
         
         type_btn_push = ft.Button(
             content = ft.Text("PUSH"),
-            data = "PUSH", # Присваиваем кнопке значение типа тренировки
+            data = "Push", # Присваиваем кнопке значение типа тренировки
             on_click=select_workout_type,
             width=250,
             height=50,
         )
         type_btn_pull = ft.Button(
             content = ft.Text("PULL"),
-            data = "PULL", # Присваиваем кнопке значение типа тренировки
+            data = "Pull", # Присваиваем кнопке значение типа тренировки
             on_click=select_workout_type,
             width=250,
             height=50,
         )
         type_btn_legs = ft.Button(
             content = ft.Text("LEGS"),
-            data = "LEGS", # Присваиваем кнопке значение типа тренировки
+            data = "Legs", # Присваиваем кнопке значение типа тренировки
             on_click=select_workout_type,
             width=250,
             height=50,
@@ -499,7 +631,7 @@ def main (page: ft.Page):
             spacing=15,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
         )
-        
+
         show_view([workout_type_content])       
     
     def select_gym_view():
@@ -626,8 +758,6 @@ def main (page: ft.Page):
         update_workouts_container()
         show_view([history_view_content])
     
-   
-   
     main_view()                                                                                    # Запускаем функцию main_view() при старте приложения (показываем экран MAIN_VIEW).
 
 ft.app(target=main)                                                                                # Запускаем приложение Flet и передаем в него функцию main() как точку входа.
