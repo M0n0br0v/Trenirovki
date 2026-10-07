@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.5 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.5">
   <diagram name="Страница — 1" id="Kpuwp0D8WjqGyxxN1lrd">
-    <mxGraphModel dx="1594" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4353" dy="2493" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -602,8 +602,8 @@
         <mxCell id="nQ0QAQUby_pZ3yXj51tU-322" value="sets" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;fontFamily=Comic Sans MS;fontSize=16;labelBackgroundColor=none;verticalAlign=middle;strokeColor=#9673a6;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="2460" y="4930" width="50" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="nQ0QAQUby_pZ3yXj51tU-339" value="SET" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="2260" y="4360" width="80" height="40" as="geometry" />
+        <mxCell id="nQ0QAQUby_pZ3yXj51tU-339" value="SET_VIEW" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
+          <mxGeometry x="2200" y="4360" width="200" height="40" as="geometry" />
         </mxCell>
         <mxCell id="nQ0QAQUby_pZ3yXj51tU-410" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="-500" y="4400" width="200" height="400" as="geometry" />
@@ -1079,8 +1079,8 @@
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-469" value="Отмена" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;fontFamily=Comic Sans MS;fontSize=11;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;strokeColor=#b85450;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="2210" y="2940" width="180" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-470" value="GYM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="2260" y="2560" width="80" height="40" as="geometry" />
+        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-470" value="GYM&lt;div&gt;DATA&lt;/div&gt;&lt;div&gt;VIEW&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
+          <mxGeometry x="2200" y="2480" width="200" height="120" as="geometry" />
         </mxCell>
         <mxCell id="BShIGpPqxZisoaVtvBbg-173" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;strokeWidth=1;align=center;verticalAlign=middle;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=default;startArrow=none;startFill=0;startSize=4;endArrow=classic;endFill=1;endSize=4;flowAnimation=0;fillColor=#d5e8d4;" parent="1" source="NZ6ZDpyBj6s4RTOYCVrW-473" target="NZ6ZDpyBj6s4RTOYCVrW-583" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -1461,8 +1461,8 @@
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-583" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="2200" y="3500" width="200" height="400" as="geometry" />
         </mxCell>
-        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-584" value="NOTES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="2240" y="3460" width="120" height="40" as="geometry" />
+        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-584" value="NOTES&lt;div&gt;VIEW&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
+          <mxGeometry x="2240" y="3420" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-587" value="&amp;lt;notes&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="2207.5" y="3540" width="180" height="240" as="geometry" />
@@ -1611,8 +1611,8 @@
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-407" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="1300" y="4400" width="200" height="400" as="geometry" />
         </mxCell>
-        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-408" value="SELECT EXERCISES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="1280" y="4320" width="240" height="80" as="geometry" />
+        <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-408" value="SELECT EXERCISES&lt;div&gt;VIEW&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
+          <mxGeometry x="1280" y="4280" width="240" height="120" as="geometry" />
         </mxCell>
         <mxCell id="NZ6ZDpyBj6s4RTOYCVrW-411" value="Dips" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;fontFamily=Comic Sans MS;fontSize=11;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="1330" y="4500" width="140" height="20" as="geometry" />
@@ -2035,8 +2035,8 @@
         <mxCell id="nQ0QAQUby_pZ3yXj51tU-315" value="Добавить подход" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;fontFamily=Comic Sans MS;fontSize=11;labelBackgroundColor=none;verticalAlign=middle;sketch=1;curveFitting=1;jiggle=2;strokeColor=#82b366;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
           <mxGeometry x="410" y="4725.5" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="nQ0QAQUby_pZ3yXj51tU-338" value="EXERCISE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
-          <mxGeometry x="395" y="4200" width="160" height="40" as="geometry" />
+        <mxCell id="nQ0QAQUby_pZ3yXj51tU-338" value="EXERCISE&lt;div&gt;VIEW&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Comic Sans MS;fontSize=32;fontColor=default;labelBackgroundColor=none;verticalAlign=middle;strokeColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" parent="1" vertex="1">
+          <mxGeometry x="400" y="4160" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="BShIGpPqxZisoaVtvBbg-206" style="edgeStyle=none;shape=connector;rounded=0;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1;align=center;verticalAlign=middle;fontFamily=Comic Sans MS;fontSize=11;fontColor=default;labelBackgroundColor=default;resizable=1;startArrow=none;startFill=0;startSize=4;endArrow=none;endFill=1;endSize=4;" parent="1" target="BShIGpPqxZisoaVtvBbg-201" edge="1">
           <mxGeometry relative="1" as="geometry">
